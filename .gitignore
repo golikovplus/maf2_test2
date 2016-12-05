@@ -2,6 +2,9 @@
 /public/storage
 /app/config/packages
 /public/packages
+/public/build
+/public/css
+/public/js
 
 /bootstrap/compiled.php
 /build/logs
