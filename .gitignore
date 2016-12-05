@@ -3,8 +3,9 @@
 /app/config/packages
 /public/packages
 /public/build
-/public/css
 /public/js
+/public/css
+
 
 /bootstrap/compiled.php
 /build/logs
