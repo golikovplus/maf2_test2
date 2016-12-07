@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>MyAgentFinder</title>
+</head>
 <body>
 
 <div id="app">
