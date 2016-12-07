@@ -3,7 +3,7 @@
   "scripts": {
     "prod": "gulp --production",
     "dev": "gulp watch",
-    "postinstall": "gulp default"
+    "postinstall": "gulp --production"
   },
   "dependencies": {
     "gulp": "^3.8.10",
