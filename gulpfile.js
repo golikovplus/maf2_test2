@@ -22,6 +22,9 @@ elixir(function(mix){
 
     mix
         .sass('app.scss')
+        .styles('styles.css')
         .webpack('app.js')
-        .version(assets)
+        .version(assets);
+    mix.copy('resources/assets/images', 'public/images');
+    mix.copy('resources/assets/fonts', 'public/fonts');
 });
