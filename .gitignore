@@ -2,6 +2,8 @@
 /public/storage
 /app/config/packages
 /public/packages
+/public/images
+/public/fonts
 /public/build
 /public/js
 /public/css
