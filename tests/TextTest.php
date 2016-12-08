@@ -14,6 +14,6 @@ class TextTest extends TestCase
     public function testBasicExample()
     {
         $this->visit('/')
-             ->see('MyAgentFinder');
+             ->see('MyAgentFinder2');
     }
 }
