@@ -21,7 +21,9 @@ elixir(function(mix){
         ];
 
     mix
+        .phpUnit()
         .sass('app.scss')
         .webpack('app.js')
         .version(assets)
+
 });
