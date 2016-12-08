@@ -1,7 +1,7 @@
 const elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue-2');
-
+var gulp = require('gulp');
+var phpunit = require('gulp-phpunit');
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -13,17 +13,18 @@ require('laravel-elixir-vue-2');
  |
  */
 
-elixir(function(mix){
+gulp.task('phpunit', function() {
+    var options = {debug: false};
+    gulp.src('phpunit.xml').pipe(phpunit('./vendor/bin/phpunit',options));
+});
 
+elixir(function (mix) {
     var assets = [
             'public/css',
             'public/js'
         ];
-
     mix
-        .phpUnit()
         .sass('app.scss')
         .webpack('app.js')
         .version(assets)
-
 });
