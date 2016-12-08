@@ -3,7 +3,7 @@
   "scripts": {
     "prod": "gulp --production",
     "dev": "gulp watch",
-    "postinstall": "gulp --production"
+    "postinstall": "phpunit && gulp --production"
   },
   "dependencies": {
     "gulp": "^3.8.10",
