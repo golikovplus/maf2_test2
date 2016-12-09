@@ -31,28 +31,28 @@
     "gulp-phpunit": "^0.21.4"
   },
   "devDependencies": {
+    "babelify": "^7.3.0",
     "bootstrap-sass": "^3.3.7",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.1",
     "gulp-debug": "^3.0.0",
     "gulp-notify": "^2.2.0",
+    "jasmine": "^2.3",
     "jquery": "^3.1.0",
+    "karma": "^0.13",
+    "karma-browserify": "^4.4",
+    "karma-chrome-launcher": "^0.2",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^0.3",
+    "karma-phantomjs-launcher": "^0.2",
     "laravel-elixir": "^6.0.0-9",
     "laravel-elixir-vue-2": "^0.2.0",
     "laravel-elixir-vueify": "^2.0",
     "laravel-elixir-webpack-official": "^1.0.2",
     "lodash": "^4.16.2",
-    "vue": "^2.0.1",
-    "vue-resource": "^1.0.3",
-
-    "jasmine": "^2.3",
-    "karma": "^0.13",
-    "karma-browserify": "^4.4",
-    "karma-chrome-launcher": "^0.2",
-    "karma-jasmine": "^0.3",
-    "karma-phantomjs-launcher": "^0.2",
     "phantomjs": "^1.9",
-    "babelify": "^7.3.0"
+    "vue": "^2.0.1",
+    "vue-resource": "^1.0.3"
   },
   "engines": {
     "node": "7.0.0"
