@@ -242,6 +242,12 @@ section#location {
 }
 section#location {
   background-color: #f7f7f7;
+  position: absolute;
+  z-index: 5;
+}
+section#location-form-step {
+  position: absolute;
+  z-index: 9;
 }
 section#location #location-form-container { /* Position on the actual form stablished always by its parent container */
   margin-top: 40px;
@@ -358,7 +364,7 @@ section.features{
 /* Lead Generator */
 
 #lead-generator {
-  position: relative;
+  position: absolute;
 }
 
 section.extra-padding {

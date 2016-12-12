@@ -6,7 +6,7 @@
 
             <div class="input-group location-selected">
                 <i class="location-icon"></i>
-                <input type="text" class="form-control" value="" placeholder="placeholder" id="googlemap-autocomplete-selector">
+                <input type="text" class="form-control" v-model="geoPosition" id="googlemap-autocomplete-selector">
                 <span class="input-group-btn">
                     <button class="btn btn-find-agent" type="button">
                       find <span class="hidden-xs">my agent</span>
@@ -19,10 +19,34 @@
 <script>
     import LocationFormIndexComponent from './location-form/index.vue'
     export default{
-        data(){
-            return{
-                msg:'hello vue'
+        mounted: function() {
+            this.geoPosition = '';
+            if (localStorage['geoPosition']) {
+                //this.geoPosition = localStorage['geoPosition'];
             }
+            var self = this;
+            var vueRoot = this.$parent.$parent.$parent;
+            var googleMap = vueRoot.getGoogleMap();
+            vueRoot.setCallback(function(address) {
+                localStorage['geoPosition'] = self.geoPosition = address;
+            });
+            var autocomplete = new google.maps.places.Autocomplete(document.getElementById('googlemap-autocomplete-selector'));
+            autocomplete.bindTo('bounds', googleMap);
+            autocomplete.addListener('place_changed', function() {
+                var place = autocomplete.getPlace();
+                if (!place.geometry) {
+                    console.log("Autocomplete's returned place contains no geometry");
+                    return;
+                }
+                vueRoot.setRequestGoogleMap();
+                localStorage['geoPosition'] = self.geoPosition = document.getElementById('googlemap-autocomplete-selector').value;
+                if (place.geometry.viewport) {
+                    googleMap.fitBounds(place.geometry.viewport);
+                } else {
+                    googleMap.setCenter(place.geometry.location);
+                }
+            });
+            autocomplete.setTypes(['(cities)']);
         },
         components:{
             'other-component':LocationFormIndexComponent,
