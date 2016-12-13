@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/api/lead/{id?}', 'Leads@index');
+Route::post('/api/lead', 'Leads@store');
+Route::post('/api/lead/{id}', 'Leads@update');
+Route::delete('/api/lead/{id}', 'Leads@destroy');
