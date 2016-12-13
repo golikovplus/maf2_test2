@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-alignment col-md-15 col-sm-15 col-xs-12">
-          <a class="maf-logo" href="/"></a>
+          <a class="maf-logo" href="/" @click="goHome()"></a>
         </div>
         <div class="col-alignment col-md-15 col-sm-15 col-xs-12">
           <div class="center">
@@ -63,3 +63,18 @@
     </div>
   </footer>
 </template>
+<script>
+    export default {
+        methods: {
+            goHome: function() {
+                localStorage.removeItem('step');
+                localStorage.removeItem('geoPosition');
+            }
+        },
+        data() {
+            return {
+                googleMapRequested: false
+            }
+        }
+    }
+</script>

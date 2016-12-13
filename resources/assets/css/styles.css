@@ -246,7 +246,10 @@ section#location {
   z-index: 5;
 }
 section#location-form-step {
-  position: absolute;
+  height: 730px;
+  z-index: 9;
+}
+section#lead-type-form-step {
   z-index: 9;
 }
 section#location #location-form-container { /* Position on the actual form stablished always by its parent container */
@@ -262,7 +265,7 @@ section#location #location-form-container { /* Position on the actual form stabl
 }
 @media (min-width: 1200px) {
   section#location {
-    height: 650px;
+    height: 730px;
   }
   section#location #location-form-container {
     margin-top: 238px;
@@ -415,6 +418,9 @@ section.extra-padding {
   width: 100%;
   overflow: hidden;
   background-color: #AAD5D4;
+}
+.section-map-wrapper.second-relation {
+  background: none;
 }
 #map {
   height: 100%;
@@ -721,6 +727,7 @@ section#location-form-step #location-form-container { /* Position on the actual 
 }
 #agent-hint {
   position: absolute;
+  top: 120px;
   right: 0;
   width: 330px;
   bottom: 280px;

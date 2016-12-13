@@ -27,7 +27,7 @@ const app = new Vue({
     geoSet: function(formatted_address) {
       if (this.googleMapCallback !== null) this.googleMapCallback(formatted_address);
     },
-    getGoogleMap: function() {
+    getGoogleMap: function(requestNavigation) {
       var mapProp = {
         center: new google.maps.LatLng(32.715736, -117.161087), // Note: nginx good autodetect of first positions
         zoom: 13,
@@ -37,6 +37,7 @@ const app = new Vue({
         panControl: false,
         zoomControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true,
 
         //styles from https://snazzymaps.com/style/74/becomeadinosaur
         styles:
@@ -357,7 +358,7 @@ const app = new Vue({
       };
       var self = this;
       var mapElement = document.getElementById("map");
-      if (navigator.geolocation) {
+      if (navigator.geolocation && (typeof requestNavigation != 'undefined')) {
         navigator.geolocation.getCurrentPosition(function(position) {
           var pos = {
             lat: position.coords.latitude,

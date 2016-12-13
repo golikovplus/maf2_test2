@@ -2,20 +2,18 @@
     <div>
         <maf-navbar></maf-navbar>
 
-        <section id="location" v-show="!googleMapRequested">
-        </section>
         <div id="lead-generator" class="section-map-wrapper">
-          <div id="map"></div>
-          <div class="map-opacity-layer"></div>
+            <div id="map"></div>
+            <div class="map-opacity-layer"></div>
+            <section id="location" v-show="!googleMapRequested"></section>
+            <maf-form-base></maf-form-base>
         </div>
 
-        <maf-location-form-base></maf-location-form-base>
+        <div class="section-map-wrapper second-relation"></div>
 
-        <div style="height: 730px;"></div>
-
-        <maf-our-customers-section></maf-our-customers-section>
-        <maf-blog-latest-section></maf-blog-latest-section>
-        <maf-partners-section></maf-partners-section>
+        <maf-our-customers-section v-show="!googleMapRequested"></maf-our-customers-section>
+        <maf-blog-latest-section v-show="!googleMapRequested"></maf-blog-latest-section>
+        <maf-partners-section v-show="!googleMapRequested"></maf-partners-section>
 
         <maf-footer></maf-footer>
     </div>

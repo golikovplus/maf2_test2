@@ -2,7 +2,7 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="maf-logo navbar-brand" href="/"></a>
+                <a class="maf-logo navbar-brand" href="/" @click="goHome()"></a>
             </div>
 
             <div class="navbar-right">
@@ -16,3 +16,18 @@
         </div>
     </nav>
 </template>
+<script>
+    export default {
+        methods: {
+            goHome: function() {
+                localStorage.removeItem('step');
+                localStorage.removeItem('geoPosition');
+            }
+        },
+        data() {
+            return {
+                googleMapRequested: false
+            }
+        }
+    }
+</script>

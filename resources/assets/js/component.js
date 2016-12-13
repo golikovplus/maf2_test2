@@ -4,6 +4,13 @@ Vue.component('maf-blog-latest-section', require('./components/maf-blog-latest-s
 Vue.component('maf-partners-section', require('./components/maf-partners-section.vue'));
 Vue.component('maf-footer', require('./components/maf-footer.vue'));
 
-Vue.component('maf-location-form-base', require('./components/maf-location-form-base.vue'));
-Vue.component('maf-location-form', require('./components/maf-location-form.vue'));
-
+Vue.component('maf-form-base', require('./components/maf-form-base.vue'));
+Vue.component('maf-form-location', require('./components/form/location.vue'));
+Vue.component('maf-form-lead-type', require('./components/form/lead-type.vue'));
+Vue.component('maf-form-agent-hero', require('./components/form/agent-hero.vue'));
+Vue.component('maf-form-basic-info', require('./components/form/basic-info.vue'));
+Vue.component('maf-form-contact-info', require('./components/form/contact-info.vue'));
+Vue.component('maf-form-home-type', require('./components/form/home-type.vue'));
+Vue.component('maf-form-preferences', require('./components/form/preferences.vue'));
+Vue.component('maf-form-price-range', require('./components/form/price-range.vue'));
+Vue.component('maf-form-time-frame', require('./components/form/time-frame.vue'));
