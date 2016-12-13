@@ -36,7 +36,9 @@ class Leads extends Controller
         $lead->phone = $request->input('phone');
         $lead->save();
 
-        return 'Lead record successfully created with id ' . $lead->id;
+        return response()->json(array(
+            'success' => true,
+            'id' => $lead->id));
     }
 
     /**
