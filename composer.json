@@ -43,7 +43,8 @@
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
-        ]
+        ],
+        "postinstall": "gulp --production && gulp phpunit"
     },
     "config": {
         "preferred-install": "dist"
