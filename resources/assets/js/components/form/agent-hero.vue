@@ -28,13 +28,20 @@
     export default{
         data() {
             return {
-                test: ''
+                value: null
             }
         },
         methods: {
             setAgentHero: function(value) {
                 console.log('setAgentHero', value);
-            }
+                this.value = value;
+                var vueFormBase = this.$parent;
+                vueFormBase.nextStep();
+            },
+            get_is_buyer: function() {
+                var vueFormBase = this.$parent;
+                return vueFormBase.buyer;
+            },
         }
     }
 </script>

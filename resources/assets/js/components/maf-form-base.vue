@@ -42,16 +42,19 @@
         },
         data() {
             var storeStep = 'location';
-            if (localStorage['step']) storeStep = localStorage['step'];
+            var params = window.location.pathname.substr(1).split('/');
+            if (params[0] == 'location' && typeof params[1] != 'undefined') {
+                storeStep = params[1];
+            }
+            var buyer = null;
+            if (localStorage['buyer']) buyer = localStorage['buyer'];
             return {
+                buyer: buyer,
                 step: storeStep,
                 progress: 0
             }
         },
         methods: {
-            created: function() {
-                this.updateProgress();
-            },
             nextStep: function(param) {
                 switch (this.step) {
                     case 'location':
@@ -70,9 +73,32 @@
                     case 'price-range':
                         this.step = 'home-type';
                         break;
+                    case 'home-type':
+                        this.step = 'time-frame';
+                        break;
+                    case 'time-frame':
+                        this.step = 'agent-hero';
+                        break;
+                    case 'agent-hero':
+                        this.step = 'basic-info';
+                        break;
+                    case 'basic-info':
+                        this.step = 'contact-info';
+                        break;
+                    case 'contact-info':
+                        if (this.buyer) {
+                            this.step = 'status';
+                        } else {
+                            this.step = 'searching';
+                        }
+                        break;
                 }
                 this.updateProgress();
-                localStorage['step'] = this.step;
+                if (this.step != 'location') {
+                    history.pushState("", "", "/location/" + this.step);
+                } else {
+                    history.pushState("", "", "/location/");
+                }
             },
             updateProgress: function() {
                 this.progress = 0;
@@ -90,10 +116,10 @@
                         this.progress = 40;
                         break;
                     case 'agent-hero':
-                        this.progress = 90;
+                        this.progress = 70;
                         break;
                     case 'basic-info':
-                        this.progress = 90;
+                        this.progress = 80;
                         break;
                     case 'contact-info':
                         this.progress = 90;
@@ -102,7 +128,7 @@
                         this.progress = 50;
                         break;
                     case 'time-frame':
-                        this.progress = 90;
+                        this.progress = 60;
                         break;
                 }
             },

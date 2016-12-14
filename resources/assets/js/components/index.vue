@@ -24,6 +24,11 @@
             return {
                 googleMapRequested: false
             }
+        },
+        methods: {
+            get_vue_form: function() {
+                return this.$children[1];
+            }
         }
     }
 </script>

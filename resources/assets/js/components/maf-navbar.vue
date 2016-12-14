@@ -20,7 +20,6 @@
     export default {
         methods: {
             goHome: function() {
-                localStorage.removeItem('step');
                 localStorage.removeItem('geoPosition');
             }
         },

@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('index');
 })->name('/');
+Route::any('/location/{location}', function () {
+    return view('index');
+});
