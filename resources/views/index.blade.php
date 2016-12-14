@@ -17,6 +17,16 @@
 </head>
 <body>
 
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 {!! Form::open(array('url' => 'api/lead', 'method' => 'post')) !!}
     {!! Form::text('location', 'NewYork') !!}
     {!! Form::text('lead_type', '1') !!}
