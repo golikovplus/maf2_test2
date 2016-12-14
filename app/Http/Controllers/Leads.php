@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Lead;
+use App\Http\Requests\StoreLead;
 
 class Leads extends Controller
 {
@@ -21,7 +22,7 @@ class Leads extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request) {
+    public function store(StoreLead $request) {
         $lead = new Lead;
 
         $lead->location = $request->input('location');

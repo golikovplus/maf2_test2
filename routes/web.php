@@ -11,9 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('/');
-Route::any('/location/{location}', function () {
-    return view('index');
+Route::group(['middleware' => 'web'], function () {
+
+    Route::get('/', function () {
+        return view('index');
+    })->name('/');
+    Route::any('/location/{location}', function () {
+        return view('index');
+    });
+
+    Route::get('/api/lead/{id?}', 'Leads@index')->name('lead.index');
+    Route::post('/api/lead', 'Leads@store')->name('lead.store');
+    Route::post('/api/lead/{id}', 'Leads@update')->name('lead.update');
+    Route::delete('/api/lead/{id}', 'Leads@destroy')->name('lead.destroy');
 });
