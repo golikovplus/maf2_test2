@@ -27,7 +27,7 @@
             var googleMap = vueRoot.getGoogleMap(true);
             if (localStorage['geoPosition'] && (localStorage['geoPosition'] != '')) {
                 this.geoPosition = localStorage['geoPosition'];
-                app.googleMapRequested = true;
+                vueRoot.googleMapRequested = true;
             } else {
                 vueRoot.setCallback(function(address) {
                     localStorage['geoPosition'] = self.geoPosition = address;
@@ -41,7 +41,7 @@
                     console.log("Autocomplete's returned place contains no geometry");
                     return;
                 }
-                app.googleMapRequested = true;
+                vueRoot.googleMapRequested = true;
                 localStorage['geoPosition'] = self.geoPosition = document.getElementById('googlemap-autocomplete-selector').value;
                 if (place.geometry.viewport) {
                     googleMap.fitBounds(place.geometry.viewport);
