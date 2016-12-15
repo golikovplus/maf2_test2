@@ -7,7 +7,7 @@
 
                 <div class="input-group location-selected">
                     <i class="location-icon"></i>
-                    <input type="text" class="form-control" v-model="geoPosition" id="googlemap-autocomplete-selector">
+                    <input type="text" class="form-control" v-model="vueRoot.lead.location" id="googlemap-autocomplete-selector">
                     <span class="input-group-btn">
                         <button class="btn btn-find-agent" type="button" @click="nextStep">
                           find <span class="hidden-xs">my agent</span>
@@ -21,16 +21,14 @@
 <script>
     export default{
         mounted: function() {
-            this.geoPosition = '';
             var self = this;
-            var vueRoot = this.$parent.$parent.$parent;
-            var googleMap = vueRoot.getGoogleMap(true);
-            if (localStorage['geoPosition'] && (localStorage['geoPosition'] != '')) {
-                this.geoPosition = localStorage['geoPosition'];
-                vueRoot.googleMapRequested = true;
+            var googleMap = this.vueRoot.getGoogleMap();
+            if (this.vueRoot.lead.location !== null) {
+                this.vueRoot.googleMapRequested = true;
+                googleMap.fitBounds(this.vueRoot.lead.viewport);
             } else {
-                vueRoot.setCallback(function(address) {
-                    localStorage['geoPosition'] = self.geoPosition = address;
+                this.vueRoot.setCallback(function(address) {
+                    self.vueRoot.lead.location = address;
                 });
             }
             var autocomplete = new google.maps.places.Autocomplete(document.getElementById('googlemap-autocomplete-selector'));
@@ -41,8 +39,10 @@
                     console.log("Autocomplete's returned place contains no geometry");
                     return;
                 }
-                vueRoot.googleMapRequested = true;
-                localStorage['geoPosition'] = self.geoPosition = document.getElementById('googlemap-autocomplete-selector').value;
+                self.vueRoot.googleMapRequested = true;
+                self.vueRoot.lead.location = document.getElementById('googlemap-autocomplete-selector').value;
+                self.vueRoot.lead.viewport = place.geometry.viewport;
+                self.vueRoot.lead.save();
                 if (place.geometry.viewport) {
                     googleMap.fitBounds(place.geometry.viewport);
                 } else {
@@ -53,15 +53,14 @@
         },
         methods: {
             nextStep: function(event) {
-                //var vueRoot = this.$parent.$parent.$parent;
-                //if (!vueRoot.getRequestGoogleMap()) return;
+                //if (!this.vueRoot.getRequestGoogleMap()) return;
                 var vueFormBase = this.$parent;
                 vueFormBase.nextStep();
             }
         },
         data() {
             return {
-                geoPosition: ''
+                vueRoot: this.$parent.$parent.$parent
             }
         }
     }

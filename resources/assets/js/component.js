@@ -14,3 +14,7 @@ Vue.component('maf-form-home-type', require('./components/form/home-type.vue'));
 Vue.component('maf-form-preferences', require('./components/form/preferences.vue'));
 Vue.component('maf-form-price-range', require('./components/form/price-range.vue'));
 Vue.component('maf-form-time-frame', require('./components/form/time-frame.vue'));
+Vue.component('maf-form-status', require('./components/form/status.vue'));
+Vue.component('maf-form-searching', require('./components/form/searching.vue'));
+
+require('./components/object/lead');

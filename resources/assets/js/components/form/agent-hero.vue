@@ -28,19 +28,17 @@
     export default{
         data() {
             return {
-                value: null
+                vueRoot: this.$parent.$parent.$parent
             }
         },
         methods: {
             setAgentHero: function(value) {
-                console.log('setAgentHero', value);
-                this.value = value;
+                this.vueRoot.lead.agent_hero = value;
                 var vueFormBase = this.$parent;
                 vueFormBase.nextStep();
             },
             get_is_buyer: function() {
-                var vueFormBase = this.$parent;
-                return vueFormBase.buyer;
+                return this.vueRoot.lead.lead_type;
             },
         }
     }

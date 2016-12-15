@@ -5,7 +5,7 @@
                 <h1>Now a little bit about you...</h1>
                 <h3>What is your name? We never share your personal information with third parties.</h3>
 
-                <input type="text" placeholder="Full Name" class="form-control mabo1" value="">
+                <input type="text" placeholder="Full Name" class="form-control mabo1" v-model="vueRoot.lead.fullname">
                 <div class="disclaimer mabo3">Your personal information is <a href="">100% safe with us.</a></div>
 
                 <div class="row">
@@ -35,7 +35,7 @@
     export default{
         data() {
             return {
-                value: ''
+                vueRoot: this.$parent.$parent.$parent
             }
         },
         methods: {

@@ -67,13 +67,8 @@
     export default {
         methods: {
             goHome: function() {
-                localStorage.removeItem('geoPosition');
+                localStorage.clear();
             }
         },
-        data() {
-            return {
-                googleMapRequested: false
-            }
-        }
     }
 </script>

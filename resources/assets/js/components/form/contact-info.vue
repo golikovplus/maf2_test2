@@ -19,8 +19,8 @@
                     </div>
                 </div>
 
-                <input type="text" placeholder="Email" class="form-control" value="">
-                <input type="text" placeholder="Phone Number" class="form-control last" value="">
+                <input type="text" placeholder="Email" class="form-control" v-model="vueRoot.lead.email">
+                <input type="text" placeholder="Phone Number" class="form-control last" v-model="vueRoot.lead.phone">
                 <div class="mabo3 disclaimer">Your personal information is <a href="">100% safe with us.</a></div>
 
                 <div class="row">
@@ -39,7 +39,7 @@
     export default{
         data() {
             return {
-                value: ''
+                vueRoot: this.$parent.$parent.$parent
             }
         },
         methods: {

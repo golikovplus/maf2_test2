@@ -97,17 +97,15 @@
     export default{
         data() {
             return {
-                checked: null
+                vueRoot: this.$parent.$parent.$parent
             }
         },
         methods: {
             setHomeType: function(type) {
-                this.checked = type;
-                console.log('setHomeType', type);
+                this.vueRoot.lead.home_type = type;
             },
             get_is_buyer: function() {
-                var vueFormBase = this.$parent;
-                return vueFormBase.buyer;
+                return this.vueRoot.lead.lead_type;
             },
             next: function() {
                 var vueFormBase = this.$parent;

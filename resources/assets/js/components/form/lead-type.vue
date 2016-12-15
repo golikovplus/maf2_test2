@@ -28,13 +28,18 @@
         methods: {
             setLeadTypeBuy: function() {
                 var vueFormBase = this.$parent;
-                vueFormBase.buyer = true;
-                vueFormBase.nextStep('buy');
+                this.vueRoot.lead.lead_type = true;
+                vueFormBase.nextStep();
             },
             setLeadTypeSell: function() {
                 var vueFormBase = this.$parent;
-                vueFormBase.buyer = false;
-                vueFormBase.nextStep('sell');
+                this.vueRoot.lead.lead_type = false;
+                vueFormBase.nextStep();
+            }
+        },
+        data() {
+            return {
+                vueRoot: this.$parent.$parent.$parent
             }
         }
     }

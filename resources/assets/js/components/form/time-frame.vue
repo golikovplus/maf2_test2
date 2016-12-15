@@ -32,19 +32,17 @@
     export default{
         data() {
             return {
-                frame: null
+                vueRoot: this.$parent.$parent.$parent
             }
         },
         methods: {
             setTimeFrame: function(frame) {
-                this.frame = frame;
-                console.log('setTimeFrame', frame);
+                this.vueRoot.lead.time_frame = frame;
                 var vueFormBase = this.$parent;
                 vueFormBase.nextStep();
             },
             get_is_buyer: function() {
-                var vueFormBase = this.$parent;
-                return vueFormBase.buyer;
+                return this.vueRoot.lead.lead_type;
             },
         }
     }

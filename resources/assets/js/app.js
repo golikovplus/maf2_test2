@@ -16,19 +16,25 @@ require('./bootstrap');
 require('./component');
 
 Vue.component('maf-app', require('./components/index.vue'));
+Vue.http.options.emulateJSON = true;
 
 const app = new Vue({
   el: '#app',
   data: {
+    lead: null,
     googleMapRequested: false,
     googleMap: null,
     googleMapCallback: null
+  },
+  created: function() {
+    this.lead = new Lead();
+    this.lead.load();
   },
   methods: {
     geoSet: function(formatted_address) {
       if (this.googleMapCallback !== null) this.googleMapCallback(formatted_address);
     },
-    getGoogleMap: function(requestNavigation) {
+    getGoogleMap: function() {
       var mapProp = {
         center: new google.maps.LatLng(32.715736, -117.161087), // Note: nginx good autodetect of first positions
         zoom: 13,
@@ -357,32 +363,42 @@ const app = new Vue({
             }
           ]
       };
-      var self = this;
       var mapElement = document.getElementById("map");
-      if (navigator.geolocation && (typeof requestNavigation != 'undefined')) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-          self.googleMap.setCenter(pos);
-          var geocoder = new google.maps.Geocoder;
-          geocoder.geocode({'location': pos}, function(results, status) {
-            for (var index in results) {
-              if (parseInt(index) == 0) continue;
-              var result = results[index];
-              if (typeof result['formatted_address'] != 'undefined') {
-                self.geoSet(result['formatted_address']);
-                break;
-              }
-            }
-          });
-        });
-      }
       return this.googleMap = new google.maps.Map(mapElement, mapProp);
+    },
+    sendLead: function() {
+      this.$http.post('/api/lead', {
+        leadJson: JSON.stringify(this.lead)
+      }, function (data, status, request) {
+        console.log('sendLead done', data);
+        this.postResults = data;
+        this.ajaxRequest = false;
+      });
     },
     setCallback: function(callback) {
       this.googleMapCallback = callback;
+      if (!navigator.geolocation) return;
+      var self = this;
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        self.googleMap.setCenter(pos);
+        var geocoder = new google.maps.Geocoder;
+        geocoder.geocode({'location': pos}, function(results, status) {
+          for (var index in results) {
+            if (parseInt(index) == 0) continue;
+            var result = results[index];
+            if (typeof result['formatted_address'] != 'undefined') {
+              self.geoSet(result['formatted_address']);
+              break;
+            }
+          }
+        });
+      }, function(message) {
+        console.log('error on geo position', message);
+      });
     }
   }
 });

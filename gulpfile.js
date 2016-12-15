@@ -30,6 +30,6 @@ elixir(function (mix) {
         .styles('styles.css')
         .webpack('app.js')
         .version(assets);
-    mix.copy('resources/assets/images', 'public/build/images');
-    mix.copy('resources/assets/fonts',  'public/build/fonts');
+    mix.copy('resources/assets/images', 'public/images');
+    mix.copy('resources/assets/fonts',  'public/fonts');
 });

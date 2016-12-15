@@ -27,6 +27,12 @@
         <section id="time-frame-form-step" class="container time-frame extra-padding" v-show="step == 'time-frame'">
             <maf-form-time-frame></maf-form-time-frame>
         </section>
+        <section id="status-form-step" class="container status extra-padding" v-show="step == 'status'">
+            <maf-form-status></maf-form-status>
+        </section>
+        <section id="searching-form-step" class="container searching extra-padding" v-show="step == 'searching'">
+            <maf-form-searching></maf-form-searching>
+        </section>
         <div id="progress-bar"
              v-bind:class="{ 'loaded-10': getProgress(10), 'loaded-20': getProgress(20), 'loaded-30': getProgress(30), 'loaded-40': getProgress(40), 'loaded-50': getProgress(50), 'loaded-60': getProgress(60), 'loaded-70': getProgress(70), 'loaded-80': getProgress(80), 'loaded-90': getProgress(90), 'loaded-100': getProgress(100) }"
              v-show="progress > 0">
@@ -46,22 +52,20 @@
             if (params[0] == 'location' && typeof params[1] != 'undefined') {
                 storeStep = params[1];
             }
-            var buyer = null;
-            if (localStorage['buyer']) buyer = localStorage['buyer'];
             return {
-                buyer: buyer,
+                vueRoot: this.$parent.$parent,
                 step: storeStep,
                 progress: 0
             }
         },
         methods: {
-            nextStep: function(param) {
+            nextStep: function() {
                 switch (this.step) {
                     case 'location':
                         this.step = 'lead-type';
                         break;
                     case 'lead-type':
-                        if (param == 'buy') {
+                        if (this.vueRoot.lead.lead_type) {
                             this.step = 'preferences';
                         } else {
                             this.step = 'price-range';
@@ -86,11 +90,19 @@
                         this.step = 'contact-info';
                         break;
                     case 'contact-info':
-                        if (this.buyer) {
+                        if (this.vueRoot.lead.lead_type) {
                             this.step = 'status';
                         } else {
                             this.step = 'searching';
+                            this.vueRoot.sendLead();
                         }
+                        break;
+                    case 'status':
+                        this.step = 'searching';
+                        this.vueRoot.sendLead();
+                        break;
+                    case 'searching':
+                        this.step = 'location';
                         break;
                 }
                 this.updateProgress();
@@ -99,6 +111,7 @@
                 } else {
                     history.pushState("", "", "/location/");
                 }
+                this.vueRoot.lead.save();
             },
             updateProgress: function() {
                 this.progress = 0;
@@ -129,6 +142,12 @@
                         break;
                     case 'time-frame':
                         this.progress = 60;
+                        break;
+                    case 'status':
+                        this.progress = 90;
+                        break;
+                    case 'searching':
+                        this.progress = 100;
                         break;
                 }
             },

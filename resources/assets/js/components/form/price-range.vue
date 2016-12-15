@@ -40,15 +40,19 @@
 </template>
 <script>
     export default{
+        data() {
+            return {
+                vueRoot: this.$parent.$parent.$parent
+            }
+        },
         methods: {
             get_is_buyer: function() {
-                var vueFormBase = this.$parent;
-                return vueFormBase.buyer;
+                return this.vueRoot.lead.lead_type;
             },
             setPriceRange: function(range) {
+                this.vueRoot.lead.price_range = range;
                 var vueFormBase = this.$parent;
                 vueFormBase.nextStep();
-                console.log('setPriceRange', range);
             },
         }
     }
