@@ -30,7 +30,7 @@
                 this.vueRoot.setCallback(function(address, pos) {
                     self.vueRoot.lead.location = address;
                     self.vueRoot.lead.viewport = pos;
-                    googleMap.fitBounds(pos);
+                    googleMap.setCenter(pos);
                 });
             }
             var autocomplete = new google.maps.places.Autocomplete(document.getElementById('googlemap-autocomplete-selector'));
