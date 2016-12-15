@@ -12,8 +12,8 @@
 
     <link rel="author" href="https://agentology.com">
 
-    <link rel="stylesheet" href="{{ elixir('/css/app.css') }}">
-    <link rel="stylesheet" href="{{ elixir('/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
+    <link rel="stylesheet" href="{{ elixir('css/styles.css') }}">
 </head>
 <body>
 
@@ -48,6 +48,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACphQIltB8slNccKd7N2YMKjOvZgwYXPE&libraries=places"></script>
 </body>
 <footer>
-    <script src="{!! elixir('/js/app.js') !!}"></script>
+    <script src="{{ elixir('js/app.js') }}"></script>
 </footer>
 </html>
