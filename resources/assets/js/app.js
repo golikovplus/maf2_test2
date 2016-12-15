@@ -31,7 +31,7 @@ const app = new Vue({
     this.lead.load();
   },
   methods: {
-    geoSet: function(formatted_address) {
+    geoSet: function(formatted_address, pos) {
       if (this.googleMapCallback !== null) this.googleMapCallback(formatted_address, pos);
     },
     getGoogleMap: function() {
