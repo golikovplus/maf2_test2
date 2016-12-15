@@ -29,7 +29,7 @@
 
 {!! Form::open(array('url' => 'api/lead', 'method' => 'post')) !!}
     {!! Form::text('location', 'NewYork') !!}
-    {!! Form::text('lead_type', '1') !!}
+    {!! Form::text('lead_type', '') !!}
     {!! Form::text('preferences', '2') !!}
     {!! Form::text('price_range', '3') !!}
     {!! Form::text('home_type', '4') !!}

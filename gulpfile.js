@@ -31,5 +31,5 @@ elixir(function (mix) {
         .webpack('app.js')
         .version(assets);
     mix.copy('resources/assets/images', 'public/build/images');
-    mix.copy('resources/assets/fonts', 'public/build/fonts');
+    mix.copy('resources/assets/fonts',  'public/build/fonts');
 });
