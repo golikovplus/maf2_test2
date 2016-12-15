@@ -25,7 +25,6 @@
             </ul>
         </div>
     @endif
-
     {!! Form::open(array('url' => 'api/lead', 'method' => 'post')) !!}
         {!! Form::text('location', 'NewYork') !!}
         {!! Form::text('lead_type', '') !!}
