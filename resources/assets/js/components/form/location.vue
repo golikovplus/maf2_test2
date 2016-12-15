@@ -31,6 +31,7 @@
                     self.vueRoot.lead.location = address;
                     self.vueRoot.lead.viewport = pos;
                     googleMap.setCenter(pos);
+                    this.vueRoot.googleMapRequested = true;
                 });
             }
             var autocomplete = new google.maps.places.Autocomplete(document.getElementById('googlemap-autocomplete-selector'));
