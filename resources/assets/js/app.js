@@ -20,6 +20,7 @@ Vue.component('maf-app', require('./components/index.vue'));
 const app = new Vue({
   el: '#app',
   data: {
+    googleMapRequested: false,
     googleMap: null,
     googleMapCallback: null
   },
@@ -382,9 +383,19 @@ const app = new Vue({
     },
     setCallback: function(callback) {
       this.googleMapCallback = callback;
-    },
-    setRequestGoogleMap() {
-      this.$children[0].googleMapRequested = true
     }
+  }
+});
+
+window.addEventListener('popstate', () => {
+  app.currentRoute = window.location.pathname;
+  var params = window.location.pathname.substr(1).split('/');
+  var vue_form = app.$children[0].get_vue_form();
+  if (params[0] == 'location' && typeof params[1] != 'undefined') {
+    vue_form.step = params[1];
+    vue_form.updateProgress();
+  } else if ((params.length == 1) && (params[0] == "")) {
+    vue_form.step = 'location';
+    vue_form.updateProgress();
   }
 });

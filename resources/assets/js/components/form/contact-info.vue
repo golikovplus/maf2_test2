@@ -25,7 +25,7 @@
 
                 <div class="row">
                     <button
-                            @click="next($event)"
+                            @click="next()"
                             class="btn-proceed center-block">
 
                         submit
@@ -39,8 +39,14 @@
     export default{
         data() {
             return {
-                test: ''
+                value: ''
             }
+        },
+        methods: {
+            next: function() {
+                var vueFormBase = this.$parent;
+                vueFormBase.nextStep();
+            },
         }
     }
 </script>

@@ -25,18 +25,15 @@
 </template>
 <script>
     export default{
-        data() {
-            return {
-                msg: 'hello vue'
-            }
-        },
         methods: {
             setLeadTypeBuy: function() {
                 var vueFormBase = this.$parent;
+                vueFormBase.buyer = true;
                 vueFormBase.nextStep('buy');
             },
             setLeadTypeSell: function() {
                 var vueFormBase = this.$parent;
+                vueFormBase.buyer = false;
                 vueFormBase.nextStep('sell');
             }
         }

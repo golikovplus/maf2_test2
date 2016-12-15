@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3 teal_ce">
 
-                <h1>What kind of home are you looking for?</h1>
-                <h1>What kind of home are you selling?</h1>
+                <h1 v-show=" get_is_buyer()">What kind of home are you looking for?</h1>
+                <h1 v-show="!get_is_buyer()">What kind of home are you selling?</h1>
 
                 <div class="container-fluid mawi90 option-boxes">
                     <div class="row">
@@ -97,8 +97,22 @@
     export default{
         data() {
             return {
-                test: ''
+                checked: null
             }
+        },
+        methods: {
+            setHomeType: function(type) {
+                this.checked = type;
+                console.log('setHomeType', type);
+            },
+            get_is_buyer: function() {
+                var vueFormBase = this.$parent;
+                return vueFormBase.buyer;
+            },
+            next: function() {
+                var vueFormBase = this.$parent;
+                vueFormBase.nextStep();
+            },
         }
     }
 </script>

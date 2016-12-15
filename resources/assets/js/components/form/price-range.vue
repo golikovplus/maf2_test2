@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3 teal_ce">
 
-                <h1>How much are you looking to spend?</h1>
-                <h1>What is the approximate value of your home?</h1>
+                <h1 v-show=" get_is_buyer()">How much are you looking to spend?</h1>
+                <h1 v-show="!get_is_buyer()">What is the approximate value of your home?</h1>
 
                 <div class="container-fluid">
                     <div class="row">
@@ -26,8 +26,8 @@
         <div id="agent-hint" class="hidden-xs hidden-sm">
             <div class="box-widget-a box-widget-padding">
 
-                <h2>At MyAgentFinder our agents save buyers $23k* on average when buying a home.</h2>
-                <h2>At MyAgentFinder our agents earn their sellers $7.5k* more dollars for there homes.</h2>
+                <h2 v-show=" get_is_buyer()">At MyAgentFinder our agents save buyers $23k* on average when buying a home.</h2>
+                <h2 v-show="!get_is_buyer()">At MyAgentFinder our agents earn their sellers $7.5k* more dollars for there homes.</h2>
 
                 <p class="teal_ce">
                     Your matches so far: <br />
@@ -40,12 +40,11 @@
 </template>
 <script>
     export default{
-        data() {
-            return {
-                test: ''
-            }
-        },
         methods: {
+            get_is_buyer: function() {
+                var vueFormBase = this.$parent;
+                return vueFormBase.buyer;
+            },
             setPriceRange: function(range) {
                 var vueFormBase = this.$parent;
                 vueFormBase.nextStep();
