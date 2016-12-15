@@ -27,8 +27,10 @@
                 this.vueRoot.googleMapRequested = true;
                 googleMap.fitBounds(this.vueRoot.lead.viewport);
             } else {
-                this.vueRoot.setCallback(function(address) {
+                this.vueRoot.setCallback(function(address, pos) {
                     self.vueRoot.lead.location = address;
+                    self.vueRoot.lead.viewport = pos;
+                    googleMap.fitBounds(pos);
                 });
             }
             var autocomplete = new google.maps.places.Autocomplete(document.getElementById('googlemap-autocomplete-selector'));
