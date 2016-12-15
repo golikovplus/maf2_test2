@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Testimonial;
 use Illuminate\Http\Request;
-use App\Lead;
-use App\Http\Requests\StoreLead;
+use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
+use App\Http\Requests\StoreTestimonial;
 
-class Leads extends Controller
-{
+class Testimonials extends Controller {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +17,7 @@ class Leads extends Controller
      */
     public function index($id = null) {
         if ($id == null) {
-            return Lead::orderBy('id', 'asc')->get();
+            return Testimonial::orderBy('id', 'asc')->get();
         } else {
             return $this->show($id);
         }
@@ -27,24 +29,25 @@ class Leads extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(StoreLead $request) {
-        $lead = new Lead;
+    public function store(StoreTestimonial $request) {
+        $testimonial = new Testimonial;
 
-        $lead->location = $request->input('location');
-        $lead->lead_type = $request->input('lead_type');
-        $lead->preferences = $request->input('preferences');
-        $lead->price_range = $request->input('price_range');
-        $lead->home_type = $request->input('home_type');
-        $lead->time_frame = $request->input('time_frame');
-        $lead->agent_hero = $request->input('agent_hero');
-        $lead->fullname = $request->input('fullname');
-        $lead->email = $request->input('email');
-        $lead->phone = $request->input('phone');
-        $lead->save();
+        if ($request->file('image')) {
+            $file = $request->file('image');
+            $fileName = time() . '.' .$file->getClientOriginalExtension();
+            $filePath = $testimonial::IMAGE_PATH . $fileName;
+            $file->move($testimonial::IMAGE_PATH, $fileName);
+        } else $filePath = NULL;
+
+        $testimonial->name = $request->input('fullname');
+        $testimonial->image = $filePath;
+        $testimonial->address = $request->input('address');
+        $testimonial->message = $request->input('message');
+        $testimonial->save();
 
         return response()->json(array(
             'success' => true,
-            'id' => $lead->id));
+            'id' => $testimonial->id));
     }
 
     /**
@@ -54,7 +57,7 @@ class Leads extends Controller
      * @return Response
      */
     public function show($id) {
-        return Lead::find($id);
+        return Testimonial::find($id);
     }
 
     /**
@@ -74,11 +77,11 @@ class Leads extends Controller
      * @return Response
      */
     public function destroy(Request $request) {
-        $lead = Lead::find($request->input('id'));
-        $lead->delete();
+        $testimonial = Testimonial::find($request->input('id'));
+        $testimonial->delete();
 
         return response()->json(array(
             'success' => true,
             'id' => $request->input('id')));
     }
-}
+} 

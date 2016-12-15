@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ elixir('css/styles.css') }}">
 </head>
 <body>
+
 <div id="app">
     <maf-app>Loading ...</maf-app>
 </div>
