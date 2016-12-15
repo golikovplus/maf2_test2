@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class InsertDbTest extends TestCase
 {
-    //use DatabaseTransactions;
+    use DatabaseTransactions;
     /**
      * A basic test example.
      *
@@ -15,6 +15,6 @@ class InsertDbTest extends TestCase
     public function testExample()
     {
         // uncomment this line when connection with DB ready
-        // factory(App\Lead::class)->create();
+        factory(App\Lead::class)->create();
     }
 }
