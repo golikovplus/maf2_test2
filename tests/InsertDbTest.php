@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class InsertDbTest extends TestCase
 {
-    use DatabaseTransactions;
+    //use DatabaseTransactions;
     /**
      * A basic test example.
      *
