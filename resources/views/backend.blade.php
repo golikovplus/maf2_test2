@@ -40,7 +40,7 @@
     {!! Form::close() !!}
     <br><br><br>
     {!! Form::open(array('url' => 'api/testimonial', 'method' => 'post','files' => true)) !!}
-        {!! Form::text('name', 'George') !!}
+        {!! Form::text('fullname', 'George') !!}
         {!! Form::file('image', '') !!}
         {!! Form::text('address', 'New York') !!}
         {!! Form::text('message', 'I recommend MyAgentFinder!') !!}

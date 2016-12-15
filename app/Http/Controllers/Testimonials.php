@@ -39,7 +39,7 @@ class Testimonials extends Controller {
             $file->move($testimonial::IMAGE_PATH, $fileName);
         } else $filePath = NULL;
 
-        $testimonial->name = $request->input('name');
+        $testimonial->name = $request->input('fullname');
         $testimonial->image = $filePath;
         $testimonial->address = $request->input('address');
         $testimonial->message = $request->input('message');

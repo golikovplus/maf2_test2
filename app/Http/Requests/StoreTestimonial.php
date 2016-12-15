@@ -25,7 +25,7 @@ class StoreTestimonial extends FormRequest
     {
         return [
             'image' => 'required|mimes:jpeg,bmp,png',
-            'name' => 'required|max:20',
+            'fullname' => 'required|max:20',
             'address' => 'required|max:20',
             'message' => 'required|max:225'
         ];
