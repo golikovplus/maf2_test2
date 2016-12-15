@@ -38,14 +38,6 @@
         {!! Form::text('phone', '+3806641987323') !!}
         {!! Form::submit('Click Me!') !!}
     {!! Form::close() !!}
-    <br><br><br>
-    {!! Form::open(array('url' => 'api/testimonial', 'method' => 'post','files' => true)) !!}
-        {!! Form::text('fullname', 'George') !!}
-        {!! Form::file('image', '') !!}
-        {!! Form::text('address', 'New York') !!}
-        {!! Form::text('message', 'I recommend MyAgentFinder!') !!}
-        {!! Form::submit('Click Me!') !!}
-    {!! Form::close() !!}
 </body>
 <footer>
     <script src="{{ elixir('js/app.js') }}"></script>
