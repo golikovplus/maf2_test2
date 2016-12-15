@@ -17,30 +17,6 @@
 </head>
 <body>
 
-@if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
-{!! Form::open(array('url' => 'api/lead', 'method' => 'post')) !!}
-    {!! Form::text('location', 'NewYork') !!}
-    {!! Form::text('lead_type', '') !!}
-    {!! Form::text('preferences', '2') !!}
-    {!! Form::text('price_range', '3') !!}
-    {!! Form::text('home_type', '4') !!}
-    {!! Form::text('time_frame', '5') !!}
-    {!! Form::text('agent_hero', '1') !!}
-    {!! Form::text('fullname', 'Yurec') !!}
-    {!! Form::text('email', 'example@gmail.com') !!}
-    {!! Form::text('phone', '+3806641987323') !!}
-    {!! Form::submit('Click Me!') !!}
-{!! Form::close() !!}
-
 <div id="app">
     <maf-app>Loading ...</maf-app>
 </div>
