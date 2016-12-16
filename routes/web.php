@@ -14,7 +14,7 @@
 Route::group(['middleware' => 'web'], function () {
 
     Route::get('/', function () {return view('index');})->name('/');
-    Route::get('/backend', function () {return view('backend');})->name('backend');
+    Route::get('/back', function () {return view('back');})->name('back');
 
     Route::any('/location/{location}', function () {return view('index');});
 
