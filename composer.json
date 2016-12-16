@@ -8,7 +8,8 @@
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
         "symfony/dom-crawler": "^3.2",
-        "phpunit/phpunit": "^5.7"
+        "phpunit/phpunit": "^5.7",
+        "laravelcollective/html": "5.3.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -37,8 +38,7 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize",
-            "php artisan migrate"
+            "php artisan optimize"
 
         ],
         "post-update-cmd": [
