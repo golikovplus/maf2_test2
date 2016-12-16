@@ -39,7 +39,8 @@
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize",
             "php artisan key:generate",
-            "php artisan config:clear"
+            "php artisan config:clear",
+            "php artisan migrate"
 
         ],
         "post-update-cmd": [
