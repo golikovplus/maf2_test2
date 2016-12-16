@@ -368,7 +368,16 @@ const app = new Vue({
     },
     sendLead: function() {
       this.$http.post('/api/lead', {
-        leadJson: JSON.stringify(this.lead)
+        location: this.location,
+        lead_type: this.lead_type,
+        preferences: this.preferences,
+        price_range: this.price_range,
+        home_type: this.home_type,
+        time_frame: this.time_frame,
+        agent_hero: this.agent_hero,
+        fullname: this.fullname,
+        email: this.email,
+        phone: this.phone
       }, function (data, status, request) {
         console.log('sendLead done', data);
         this.postResults = data;
@@ -407,7 +416,7 @@ window.addEventListener('popstate', () => {
   app.currentRoute = window.location.pathname;
   var params = window.location.pathname.substr(1).split('/');
   var vue_form = app.$children[0].get_vue_form();
-  if (params[0] == 'location' && typeof params[1] != 'undefined') {
+  if (params[0] == 'find-agent' && typeof params[1] != 'undefined') {
     vue_form.step = params[1];
     vue_form.updateProgress();
   } else if ((params.length == 1) && (params[0] == "")) {

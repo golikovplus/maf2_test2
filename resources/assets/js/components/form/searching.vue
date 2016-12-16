@@ -9,7 +9,7 @@
                 Please keep your phone handy for when our Agent Advisor reaches out to you at {{getPhone()}} or emails you at {{getEmail()}}.
             </h3>
 
-            <div class="disclaimer">Is this information incorrect?  <a class="small" href="/find-agent/location">Edit</a></div>
+            <div class="disclaimer">Is this information incorrect?  <a class="small" href="/">Edit</a></div>
         </div>
     </div>
 </template>

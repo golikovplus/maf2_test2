@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-bind="http://www.w3.org/1999/xhtml">
     <div>
         <div class="row">
             <div class="col-md-6 col-md-offset-3 teal_ce">
@@ -11,8 +11,9 @@
                 <div class="row">
                     <button
                             @click="next()"
+                            v-bind:class="{ 'btn-proceed-disabled': (vueRoot.lead.fullname == '') }"
+                            v-bind:disabled="(vueRoot.lead.fullname == '')"
                             class="btn-proceed center-block">
-
                         next
                     </button>
                 </div>

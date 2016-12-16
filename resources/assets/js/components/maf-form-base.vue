@@ -49,7 +49,7 @@
         data() {
             var storeStep = 'location';
             var params = window.location.pathname.substr(1).split('/');
-            if (params[0] == 'location' && typeof params[1] != 'undefined') {
+            if (params[0] == 'find-agent' && typeof params[1] != 'undefined') {
                 storeStep = params[1];
             }
             return {
@@ -60,6 +60,9 @@
         },
         methods: {
             nextStep: function() {
+                if (this.vueRoot.lead.initial_step === null) {
+                    this.vueRoot.lead.initial_step = this.step;
+                }
                 switch (this.step) {
                     case 'location':
                         this.step = 'lead-type';
@@ -107,9 +110,9 @@
                 }
                 this.updateProgress();
                 if (this.step != 'location') {
-                    history.pushState("", "", "/location/" + this.step);
+                    history.pushState("", "", "/find-agent/" + this.step);
                 } else {
-                    history.pushState("", "", "/location/");
+                    history.pushState("", "", "/find-agent/");
                 }
                 this.vueRoot.lead.save();
             },

@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-bind="http://www.w3.org/1999/xhtml">
     <div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1 col-ms-12 col-xs-12 col-ms-offset-0 col-xs-offset-0 teal_ce">
@@ -26,8 +26,9 @@
                 <div class="row">
                     <button
                             @click="next()"
+                            v-bind:class="{ 'btn-proceed-disabled': (!((vueRoot.lead.email == '') || (vueRoot.lead.phone == ''))) }"
+                            v-bind:disabled="((vueRoot.lead.email == '') || (vueRoot.lead.phone == ''))"
                             class="btn-proceed center-block">
-
                         submit
                     </button>
                 </div>

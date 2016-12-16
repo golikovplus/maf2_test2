@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" href="favicon.ico">
 
     <link rel="author" href="https://agentology.com">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
     <link rel="stylesheet" href="{{ elixir('css/styles.css') }}">

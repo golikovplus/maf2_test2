@@ -29,6 +29,7 @@ function Lead() {
   this.email = '';
   this.phone = '';
   this.status = null;
+  this.initial_step = null;
 }
 Lead.prototype = {};
 Lead.prototype.save = function() {
