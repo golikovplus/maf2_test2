@@ -1,0 +1,39 @@
+{
+  "name": "maf-2-0",
+  "description": "",
+  "scripts": {
+  },
+  "env": {
+    "APP_DEBUG": {
+      "required": true
+    },
+    "APP_ENV": {
+      "required": true
+    },
+    "APP_KEY": {
+      "required": true
+    },
+    "APP_LOG": {
+      "required": true
+    },
+    "APP_LOG_LEVEL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "papertrail"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
