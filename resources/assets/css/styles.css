@@ -287,6 +287,11 @@ section.top-agents .agents-container {
     min-width: 738px;
   }
 }
+@media (max-width: 767px) {
+  section.top-agents .agents-container {
+    min-width: 337px;
+  }
+}
 .top-agents h2{
   margin: 0px 2rem 40px 2rem;
   display: inline-block;
@@ -455,6 +460,11 @@ section.extra-padding {
 @media (min-width: 768px) and (max-width: 1199px) {
   .section-map-wrapper {
     height: 560px;
+  }
+}
+@media (max-width: 767px) {
+  .section-map-wrapper {
+    height: 310px;
   }
 }
 
@@ -816,6 +826,13 @@ section.our-customers .line {
   width: 486px;
   margin-left: -10%;
   overflow: hidden; /* This container keeps the same size in all break lines so it has this to avoid horizontal scroll */
+}
+@media (max-width: 767px) {
+  .our-customers .customers-gallery {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .our-customers .customers-gallery img{
   width: 80px;
