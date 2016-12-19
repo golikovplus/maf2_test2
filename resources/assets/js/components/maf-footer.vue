@@ -2,10 +2,10 @@
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-alignment col-md-15 col-sm-15 col-xs-12">
+        <div class="col-alignment col-md-15 hidden-sm">
           <a class="maf-logo" href="/" @click="goHome()"></a>
         </div>
-        <div class="col-alignment col-md-15 col-sm-15 col-xs-12">
+        <div class="col-alignment col-md-15 col-sm-3 col-xs-3">
           <div class="center">
             <h3>Social</h3>
             <ul>
@@ -15,7 +15,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-alignment col-md-15 col-sm-15 col-xs-12">
+        <div class="col-alignment col-md-15 col-sm-3 col-xs-3">
           <div class="center">
             <h3>Navigation</h3>
             <ul>
@@ -27,7 +27,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-alignment col-md-15 col-sm-15 col-xs-12">
+        <div class="col-alignment col-md-15 col-sm-3 col-xs-3">
           <div class="center">
             <h3>Sign In / Join</h3>
             <ul>
@@ -38,7 +38,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-alignment col-md-15 col-sm-15 col-xs-12">
+        <div class="col-alignment col-md-15 col-sm-3 col-xs-3">
           <div class="center">
             <h3>Our Network</h3>
             <ul>

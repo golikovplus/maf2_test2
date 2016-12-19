@@ -282,6 +282,11 @@ section.top-agents .agents-container {
   min-width: 1170px;
   margin-left: -50%;
 }
+@media (min-width: 768px) and (max-width: 1199px) {
+  section.top-agents .agents-container {
+    min-width: 738px;
+  }
+}
 .top-agents h2{
   margin: 0px 2rem 40px 2rem;
   display: inline-block;
@@ -445,6 +450,11 @@ section.extra-padding {
 @media (min-width: 1200px) {
   .section-map-wrapper {
     height: 730px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .section-map-wrapper {
+    height: 560px;
   }
 }
 
