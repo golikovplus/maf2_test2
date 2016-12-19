@@ -15,6 +15,10 @@
 
     <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
     <link rel="stylesheet" href="{{ elixir('css/styles.css') }}">
+
+    <script>
+        window.Laravel = { csrfToken: '{{ csrf_token() }}' };
+    </script>
 </head>
 <body>
 
