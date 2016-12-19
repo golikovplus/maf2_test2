@@ -1,5 +1,5 @@
-<template>
-    <section id="home-type-form-step" class="container home-type extra-padding">
+<template xmlns:v-bind="http://www.w3.org/1999/xhtml">
+    <div>
         <div class="row">
             <div class="col-md-6 col-md-offset-3 teal_ce">
 
@@ -9,7 +9,7 @@
                 <div class="container-fluid mawi90 option-boxes">
                     <div class="row">
                         <div class="small-col-padding col-md-4 col-ms-4 col-xs-4">
-                            <div class="box-option center-block">
+                            <div class="box-option center-block" v-bind:class="{ 'active': (vueRoot.lead.home_type == 'Single Family') }">
                                 <i class="i24 singlefamily-icon"></i><br />
                                 Single Family Home
                                 <label @click="setHomeType('Single Family')" title="Single Family" for="single-family-input">
@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="small-col-padding col-md-4 col-ms-4 col-xs-4">
-                            <div class="box-option center-block">
+                            <div class="box-option center-block" v-bind:class="{ 'active': (vueRoot.lead.home_type == 'Condominium') }">
                                 <i class="i24 condominium-icon"></i><br />
                                 Condominium
                                 <label @click="setHomeType('Condominium')" title="Condominium" for="condominium-input">
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="small-col-padding col-md-4 col-ms-4 col-xs-4">
-                            <div class="box-option center-block">
+                            <div class="box-option center-block" v-bind:class="{ 'active': (vueRoot.lead.home_type == 'Town Home') }">
                                 <i class="i24 tic-icon"></i><br />
                                 Townhome
                                 <label @click="setHomeType('Town Home')" title="Townhome" for="tic-input">
@@ -39,7 +39,7 @@
 
                     <div class="row">
                         <div class="small-col-padding col-md-4 col-ms-4 col-xs-4">
-                            <div class="box-option center-block">
+                            <div class="box-option center-block" v-bind:class="{ 'active': (vueRoot.lead.home_type == 'Mobile Home') }">
                                 <i style="width:28px" class="i24 mobilehome-icon"></i><br />
                                 Mobile Home
                                 <label @click="setHomeType('Mobile Home')" title="Mobile Home" for="mobilehome-input">
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="small-col-padding col-md-4 col-ms-4 col-xs-4">
-                            <div class="box-option center-block">
+                            <div class="box-option center-block" v-bind:class="{ 'active': (vueRoot.lead.home_type == 'Land/Lot') }">
                                 <i class="i24 empty-lot-icon"></i><br />
                                 Empty Lot
                                 <label @click="setHomeType('Land/Lot')" title="Empty Lot" for="empty-lot-input">
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="small-col-padding col-md-4 col-ms-4 col-xs-4">
-                            <div class="box-option center-block">
+                            <div class="box-option center-block" v-bind:class="{ 'active': (vueRoot.lead.home_type == 'Rental') }">
                                 <i class="i24 commercial-icon"></i><br />
                                 Commercial Space
                                 <label @click="setHomeType('Rental')" title="Commercial Space" for="commercial-input">
@@ -91,7 +91,7 @@
                 </p>
             </div>
         </div>
-    </section>
+    </div>
 </template>
 <script>
     export default{

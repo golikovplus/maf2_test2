@@ -1002,7 +1002,7 @@ footer.footer {
 .footer .footer-inner a {
   font-size: 1rem;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) {
   footer {
     padding-top:60px;
   }

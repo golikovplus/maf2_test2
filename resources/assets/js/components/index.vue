@@ -11,6 +11,8 @@
 
         <div class="section-map-wrapper second-relation"></div>
 
+        <maf-top-local-agent v-show="!vueRoot.googleMapRequested"></maf-top-local-agent>
+        <maf-why-use v-show="!vueRoot.googleMapRequested"></maf-why-use>
         <maf-our-customers-section v-show="!vueRoot.googleMapRequested"></maf-our-customers-section>
         <maf-blog-latest-section v-show="!vueRoot.googleMapRequested"></maf-blog-latest-section>
         <maf-partners-section v-show="!vueRoot.googleMapRequested"></maf-partners-section>
