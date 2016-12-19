@@ -1,4 +1,6 @@
 Vue.component('maf-navbar', require('./components/maf-navbar.vue'));
+Vue.component('maf-top-local-agent', require('./components/maf-top-local-agent.vue'));
+Vue.component('maf-why-use', require('./components/maf-why-use.vue'));
 Vue.component('maf-our-customers-section', require('./components/maf-our-customers-section.vue'));
 Vue.component('maf-blog-latest-section', require('./components/maf-blog-latest-section.vue'));
 Vue.component('maf-partners-section', require('./components/maf-partners-section.vue'));
