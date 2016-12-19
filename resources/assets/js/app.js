@@ -368,16 +368,16 @@ const app = new Vue({
     },
     sendLead: function() {
       this.$http.post('/api/lead', {
-        location: this.location,
-        lead_type: this.lead_type,
-        preferences: this.preferences,
-        price_range: this.price_range,
-        home_type: this.home_type,
-        time_frame: this.time_frame,
-        agent_hero: this.agent_hero,
-        fullname: this.fullname,
-        email: this.email,
-        phone: this.phone
+        location: this.lead.location,
+        lead_type: this.lead.lead_type,
+        preferences: this.lead.preferences,
+        price_range: this.lead.price_range,
+        home_type: this.lead.home_type,
+        time_frame: this.lead.time_frame,
+        agent_hero: this.lead.agent_hero,
+        fullname: this.lead.fullname,
+        email: this.lead.email,
+        phone: this.lead.phone
       }, function (data, status, request) {
         console.log('sendLead done', data);
         this.postResults = data;

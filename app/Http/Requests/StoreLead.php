@@ -24,11 +24,11 @@ class StoreLead extends FormRequest
     public function rules()
     {
         return [
-            'lead_type' => 'required|digits:1',
-            'preferences' => 'required|digits:1',
-            'price_range' => 'required|digits:1',
-            'home_type' => 'required|digits:1',
-            'time_frame' => 'required|digits:1',
+            'lead_type' => 'required|boolean',
+            'preferences' => 'required|max:255',
+            'price_range' => 'required|max:255',
+            'home_type' => 'required|max:255',
+            'time_frame' => 'required|max:255',
             'agent_hero' => 'required|boolean',
             'fullname' => 'required|max:20',
             'email' => 'required|email|unique:lead|max:255',
