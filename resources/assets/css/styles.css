@@ -278,26 +278,13 @@ section.top-agents {
   background-color: #fff;
   width: 100%;
 }
-section.top-agents .agents-container {
+section.top-agents .agents-container ul {
   min-width: 1170px;
-  margin-left: -50%;
-}
-@media (min-width: 768px) and (max-width: 1199px) {
-  section.top-agents .agents-container {
-    min-width: 738px;
-  }
-}
-@media (max-width: 767px) {
-  section.top-agents .agents-container {
-    min-width: 337px;
-  }
+  padding-left: 0;
 }
 .top-agents h2{
   margin: 0px 2rem 40px 2rem;
   display: inline-block;
-}
-.top-agents article {
-  padding: 0px 15% 0px 15%;
 }
 .top-agents article img {
   width: 100px;
@@ -320,6 +307,12 @@ section.top-agents .agents-container {
   font-size: 16px;
   line-height: 24px;
   color: #9d9d9d;
+}
+@media (max-width: 767px) {
+  section.top-agents .agents-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
 }
 @media (min-width: 768px) {
   .top-agents h2{
@@ -465,6 +458,9 @@ section.extra-padding {
 @media (max-width: 767px) {
   .section-map-wrapper {
     height: 310px;
+  }
+  .section-map-wrapper.mobile-hidden {
+    height: 100%;
   }
 }
 
@@ -1033,9 +1029,6 @@ footer.footer {
   footer {
     padding-top:60px;
   }
-  footer .col-alignment {
-    text-align: center;
-  }
   footer .col-alignment > .center {
      float: none;
      display: inline-block;
@@ -1048,7 +1041,6 @@ footer.footer {
     margin-top: 30%;
     margin-bottom: auto;
     width: 140px;
-    height: auto;
   }
   .footer .footer-inner {
     border-width: 2px;
@@ -1060,6 +1052,9 @@ footer.footer {
   .footer .maf-logo {
     width: 163px;
     height: 36px;
+  }
+  footer .col-alignment {
+    text-align: center;
   }
 }
 
@@ -1240,12 +1235,38 @@ i.remax-partner { background-image: url("../images/landing/remax.png"); width: 1
 /* Retina Images */
 
 @media
+  only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 144dpi) {
+    a.nav-logo {
+      background-image: url("../images/shared/agent-finder-logo@2x.png");
+    }
+
+    section#location {
+      background-image: url("../images/shared/header-image@2x.png");
+    }
+
+    i.shield { background-image: url("../images/landing/icon-shield@2x.png"); background-size: contain;}
+    i.brokerage { background-image: url("../images/landing/icon-brokerages@2x.png"); background-size: contain;}
+    i.fast { background-image: url("../images/landing/icon-fast@2x.png"); background-size: contain;}
+
+    i.big-arrow-left {background: url("../images/shared/icon-chevron-left@2x.png"); background-size: contain;}
+    i.big-arrow-right {background: url("../images/shared/icon-chevron-right@2x.png"); background-size: contain;}
+    i.facebook-xs { background-image: url("../images/shared/icon-facebook@2x.png"); background-size: contain;}
+    i.twitter-xs { background-image: url("../images/shared/icon-twitter@2x.png"); background-size: contain;}
+    i.google-xs { background-image: url("../images/shared/icon-google@2x.png"); background-size: contain;}
+    i.assistant { background-image: url("../images/demo/assistant@2x.png"); background-size: contain;}
+
+    i.coldwell-partner { background-image: url("../images/landing/coldwell@2x.png"); background-size: contain;}
+    i.century-partner { background-image: url("../images/landing/century@2x.png"); background-size: contain;}
+    i.sothebys-partner { background-image: url("../images/landing/sothebys@2x.png"); background-size: contain;}
+    i.kw-partner { background-image: url("../images/landing/kw@2x.png"); background-size: contain;}
+    i.berkshire-partner { background-image: url("../images/landing/berkshire@2x.png"); background-size: contain;}
+    i.remax-partner { background-image: url("../images/landing/remax@2x.png"); background-size: contain;}
+  }
+
+@media
   only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
+  only screen and (min-resolution: 192dpi) {
     a.nav-logo {
       background-image: url("../images/shared/agent-finder-logo@3x.png");
     }

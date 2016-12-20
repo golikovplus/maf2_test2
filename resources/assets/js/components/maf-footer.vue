@@ -1,55 +1,52 @@
-<template>
-  <footer class="footer">
+<template xmlns:v-bind="http://www.w3.org/1999/xhtml">
+  <footer class="footer" v-bind:class="{ 'hidden-xs': (vueRoot.googleMapRequested) }">
     <div class="container">
       <div class="row">
-        <div class="col-alignment col-md-15 hidden-sm hidden-xs">
+        <div class="col-alignment col-md-15 col-sm-4 col-xs-12">
           <a class="maf-logo" href="/" @click="goHome()"></a>
         </div>
-        <div>
-          <div class="col-alignment col-md-15 col-sm-3 col-xs-6">
-            <div class="center">
-              <h3>Social</h3>
-              <ul>
-                <li><a href=""><i class="facebook-xs"></i> Facebook</a></li>
-                <li><a href=""><i class="twitter-xs"></i> Twitter</a></li>
-                <li><a href=""><i class="google-xs"></i> Google+</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-alignment col-md-15 col-sm-3 col-xs-6">
-            <div class="center">
-              <h3>Navigation</h3>
-              <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">Testimonials</a></li>
-                <li><a href="">Find an Agent</a></li>
-                <li><a href="">Contact</a></li>
-              </ul>
-            </div>
+        <div class="col-alignment col-md-15 col-sm-4 col-xs-12">
+          <div class="center">
+            <h3>Social</h3>
+            <ul>
+              <li><a href=""><i class="facebook-xs"></i> Facebook</a></li>
+              <li><a href=""><i class="twitter-xs"></i> Twitter</a></li>
+              <li><a href=""><i class="google-xs"></i> Google+</a></li>
+            </ul>
           </div>
         </div>
-        <div>
-          <div class="col-alignment col-md-15 col-sm-3 col-xs-6">
-            <div class="center">
-              <h3>Sign In / Join</h3>
-              <ul>
-                <li><a href="">Agent Sign In</a></li>
-                <li><a href="">Agents Join Here</a></li>
-                <li><a href="">Lender Sign In</a></li>
-                <li><a href="">Lender Join Here</a></li>
-              </ul>
-            </div>
+        <div class="col-alignment col-md-15 col-sm-4 col-xs-12">
+          <div class="center">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Testimonials</a></li>
+              <li><a href="">Find an Agent</a></li>
+              <li><a href="">Contact</a></li>
+            </ul>
           </div>
-          <div class="col-alignment col-md-15 col-sm-3 col-xs-6">
-            <div class="center">
-              <h3>Our Network</h3>
-              <ul>
-                <li><a href="">Charitable Agents</a></li>
-                <li><a href="">My Agent Finder</a></li>
-                <li><a href="">Sale Agent Finder</a></li>
-              </ul>
-            </div>
+        </div>
+        <div class="hidden-lg hidden-md hidden-xs col-sm-4"></div>
+        <div class="col-alignment col-md-15 col-sm-4 col-xs-12">
+          <div class="center">
+            <h3>Sign In / Join</h3>
+            <ul>
+              <li><a href="">Agent Sign In</a></li>
+              <li><a href="">Agents Join Here</a></li>
+              <li><a href="">Lender Sign In</a></li>
+              <li><a href="">Lender Join Here</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-alignment col-md-15 col-sm-4 col-xs-12">
+          <div class="center">
+            <h3>Our Network</h3>
+            <ul>
+              <li><a href="">Charitable Agents</a></li>
+              <li><a href="">My Agent Finder</a></li>
+              <li><a href="">Sale Agent Finder</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -69,6 +66,11 @@
 </template>
 <script>
     export default {
+        data() {
+            return {
+                vueRoot: this.$parent.$parent
+            }
+        },
         methods: {
             goHome: function() {
                 localStorage.clear();

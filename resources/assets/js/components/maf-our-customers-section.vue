@@ -10,11 +10,11 @@
       </div>
       <div class="row centered">
         <div class="customers-gallery center">
-          <img src="/images/demo/customer-1@3x.png" alt="Top Agent" class="hidden-xs"/>
-          <img src="/images/demo/customer-2@3x.png" alt="Top Agent" />
-          <img src="/images/demo/customer-3@3x.png" alt="Top Agent" />
-          <img src="/images/demo/customer-4@3x.png" alt="Top Agent" />
-          <img src="/images/demo/customer-5@3x.png" alt="Top Agent" class="hidden-xs"/>
+          <img src="/images/demo/customer-1@3x.png" srcset="/images/demo/customer-1@3x.png 2x, /images/demo/customer-1@3x.png 3x" alt="Top Agent" class="hidden-xs"/>
+          <img src="/images/demo/customer-2@3x.png" srcset="/images/demo/customer-2@3x.png 2x, /images/demo/customer-2@3x.png 3x" alt="Top Agent" />
+          <img src="/images/demo/customer-3@3x.png" srcset="/images/demo/customer-3@3x.png 2x, /images/demo/customer-3@3x.png 3x" alt="Top Agent" />
+          <img src="/images/demo/customer-4@3x.png" srcset="/images/demo/customer-4@3x.png 2x, /images/demo/customer-4@3x.png 3x" alt="Top Agent" />
+          <img src="/images/demo/customer-5@3x.png" srcset="/images/demo/customer-5@3x.png 2x, /images/demo/customer-5@3x.png 3x" alt="Top Agent" class="hidden-xs"/>
         </div>
         <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12 col-xs-offset-0 col-sm-offset-0">
           <div class="customer-valoration">
