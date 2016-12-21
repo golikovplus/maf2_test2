@@ -8,13 +8,18 @@
                     Advisor can reach out to you within 24 hours to.</h3>
 
                 <div class="row items">
-                    <div class="small-col-padding col-md-3 col-md-offset-1 col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0">
+                    <div class="hidden-md hidden-lg center-block">
+                        <span class="item-circle">1</span> Review your results
+                        <span class="item-circle">2</span> Answer any questions
+                        <span class="item-circle">3</span> Connect you with a qualified agent
+                    </div>
+                    <div class="small-col-padding col-md-3 col-md-offset-1 hidden-sm hidden-xs">
                         <span class="item-circle">1</span> Review your results
                     </div>
-                    <div class="small-col-padding col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0">
+                    <div class="small-col-padding col-md-3 col-md-offset-0 hidden-sm hidden-xs">
                         <span class="item-circle">2</span> Answer any questions
                     </div>
-                    <div class="small-col-padding col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0">
+                    <div class="small-col-padding col-md-4 col-md-offset-0 hidden-sm hidden-xs">
                         <span class="item-circle">3</span> Connect you with a qualified agent
                     </div>
                 </div>
@@ -26,7 +31,7 @@
                 <div class="row">
                     <button
                             @click="next()"
-                            v-bind:class="{ 'btn-proceed-disabled': (!((vueRoot.lead.email == '') || (vueRoot.lead.phone == ''))) }"
+                            v-bind:class="{ 'btn-proceed-disabled': ((vueRoot.lead.email == '') || (vueRoot.lead.phone == '')) }"
                             v-bind:disabled="((vueRoot.lead.email == '') || (vueRoot.lead.phone == ''))"
                             class="btn-proceed center-block">
                         submit

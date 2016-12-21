@@ -10,7 +10,7 @@
       </div>
       <div class="row centered">
         <div class="customers-gallery center">
-          <img src="/images/demo/customer-1@3x.png" alt="Top Agent" />
+          <img src="/images/demo/customer-1@3x.png" alt="Top Agent" class="hidden-xs"/>
           <img src="/images/demo/customer-2@3x.png" alt="Top Agent" />
           <img src="/images/demo/customer-3@3x.png" alt="Top Agent" />
           <img src="/images/demo/customer-4@3x.png" alt="Top Agent" />

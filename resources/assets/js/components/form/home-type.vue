@@ -13,7 +13,7 @@
                                 <i class="i24 singlefamily-icon"></i><br />
                                 Single Family Home
                                 <label @click="setHomeType('Single Family')" title="Single Family" for="single-family-input">
-                                    <input type="radio" name="homeType" id="single-family-input" value="Single Family" /> <img />
+                                    <input v-model="vueRoot.lead.home_type" type="radio" name="homeType" id="single-family-input" value="Single Family" /> <img />
                                 </label>
                             </div>
                         </div>
@@ -22,7 +22,7 @@
                                 <i class="i24 condominium-icon"></i><br />
                                 Condominium
                                 <label @click="setHomeType('Condominium')" title="Condominium" for="condominium-input">
-                                    <input type="radio" name="homeType" id="condominium-input" value="Condominium" /> <img />
+                                    <input v-model="vueRoot.lead.home_type" type="radio" name="homeType" id="condominium-input" value="Condominium" /> <img />
                                 </label>
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                                 <i class="i24 tic-icon"></i><br />
                                 Townhome
                                 <label @click="setHomeType('Town Home')" title="Townhome" for="tic-input">
-                                    <input type="radio" name="homeType" id="tic-input" value="Town Home" /> <img />
+                                    <input v-model="vueRoot.lead.home_type" type="radio" name="homeType" id="tic-input" value="Town Home" /> <img />
                                 </label>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                                 <i style="width:28px" class="i24 mobilehome-icon"></i><br />
                                 Mobile Home
                                 <label @click="setHomeType('Mobile Home')" title="Mobile Home" for="mobilehome-input">
-                                    <input type="radio" name="homeType" id="mobilehome-input" value="Mobile Home" /> <img />
+                                    <input v-model="vueRoot.lead.home_type" type="radio" name="homeType" id="mobilehome-input" value="Mobile Home" /> <img />
                                 </label>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                                 <i class="i24 empty-lot-icon"></i><br />
                                 Empty Lot
                                 <label @click="setHomeType('Land/Lot')" title="Empty Lot" for="empty-lot-input">
-                                    <input type="radio" name="homeType" id="empty-lot-input" value="Land/Lot" /> <img />
+                                    <input v-model="vueRoot.lead.home_type" type="radio" name="homeType" id="empty-lot-input" value="Land/Lot" /> <img />
                                 </label>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                                 <i class="i24 commercial-icon"></i><br />
                                 Commercial Space
                                 <label @click="setHomeType('Rental')" title="Commercial Space" for="commercial-input">
-                                    <input type="radio" name="homeType" id="commercial-input" value="Rental" /> <img />
+                                    <input v-model="vueRoot.lead.home_type" type="radio" name="homeType" id="commercial-input" value="Rental" /> <img />
                                 </label>
                             </div>
                         </div>
