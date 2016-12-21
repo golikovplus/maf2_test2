@@ -1,6 +1,14 @@
 <?php
 
+if (getenv('DATABASE_URL')) {
+    $url = parse_url(getenv('DATABASE_URL'));
 
+    putenv('DB_HOST='.$url['host']);
+    putenv('DB_USERNAME='.$url['user']);
+    putenv('DB_PORT='.$url['port']);
+    putenv('DB_PASSWORD='.$url['pass']);
+    putenv('DB_DATABASE='.ltrim($url['path'], '/'));
+}
 
 return [
 
@@ -121,3 +129,5 @@ return [
     ],
 
 ];
+//postgres://sulpjrhyclucue:0d3dd592ca23f77461f2877a56ef6388499a9e34a9a73c85a83d172e1313220c@ec2-54-235-240-92.compute-1.amazonaws.com:5432/d4csnh4gdf6ku8
+//DATABASE_URL
