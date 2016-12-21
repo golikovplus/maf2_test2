@@ -460,7 +460,7 @@ section.extra-padding {
 }
 @media (max-width: 991px) {
   .section-map-wrapper {
-    height: 310px;
+    height: 365px;
   }
   .section-map-wrapper.mobile-hidden {
     height: 100%;
