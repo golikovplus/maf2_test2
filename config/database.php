@@ -86,7 +86,7 @@ return [
             'password' => env('DB_PASSWORD', 'PGPASSWORD'),
             'charset' => 'utf8',
             'prefix' => '',
-            'schema' => ['public', 'connect'],
+            'schema' => ['connect'],
             'sslmode' => 'prefer',
         ],
 
