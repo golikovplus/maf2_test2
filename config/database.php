@@ -1,5 +1,16 @@
 <?php
 
+
+if (getenv('DATABASE_URL')) {
+    $url = parse_url(getenv('DATABASE_URL'));
+
+    putenv('DB_HOST='.$url['host']);
+    putenv('DB_USERNAME='.$url['user']);
+    putenv('DB_PORT='.$url['port']);
+    putenv('DB_PASSWORD='.$url['pass']);
+    putenv('DB_DATABASE='.ltrim($url['path'], '/'));
+}
+
 return [
 
     /*
@@ -75,7 +86,7 @@ return [
             'password' => env('DB_PASSWORD', 'PGPASSWORD'),
             'charset' => 'utf8',
             'prefix' => '',
-            'schema' => 'public',
+            'schema' => ['public', 'connect'],
             'sslmode' => 'prefer',
         ],
 

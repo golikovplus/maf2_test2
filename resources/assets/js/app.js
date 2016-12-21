@@ -21,6 +21,7 @@ Vue.http.options.emulateJSON = true;
 const app = new Vue({
   el: '#app',
   data: {
+    testimonials: null,
     lead: null,
     googleMapRequested: false,
     googleMap: null,
@@ -28,7 +29,10 @@ const app = new Vue({
   },
   created: function() {
     this.lead = new Lead();
+    this.testimonials = [];
+
     this.lead.load();
+    this.loadTestimonials();
   },
   methods: {
     geoSet: function(formatted_address, pos) {
@@ -383,6 +387,12 @@ const app = new Vue({
         this.postResults = data;
         this.ajaxRequest = false;
       });
+    },
+    loadTestimonials: function() {
+         this.$http.get('/api/testimonial')
+            .then(function(response) {
+                this.testimonials = response.data;
+            });
     },
     setCallback: function(callback) {
       this.googleMapCallback = callback;

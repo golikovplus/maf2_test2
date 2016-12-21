@@ -821,7 +821,7 @@ section.our-customers .line {
   margin-bottom: 30px;
   width: 486px;
   margin-left: -10%;
-  overflow: hidden; /* This container keeps the same size in all break lines so it has this to avoid horizontal scroll */
+  overflow: hidden;  /* This container keeps the same size in all break lines so it has this to avoid horizontal scroll */
 }
 @media (max-width: 767px) {
   .our-customers .customers-gallery {
@@ -1321,4 +1321,8 @@ i.remax-partner { background-image: url("../images/landing/remax.png"); width: 1
    float: none;
    display: inline-block;
    text-align: left;
+}
+
+#ul_top_hypers li {
+    float: right;
 }
