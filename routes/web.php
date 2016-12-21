@@ -27,4 +27,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/api/testimonial', 'Testimonials@store')->name('testimonial.store');
     Route::post('/api/testimonial/{id}', 'Testimonials@update')->name('testimonial.update');
     Route::delete('/api/testimonial/{id}', 'Testimonials@destroy')->name('testimonial.destroy');
+
+    Route::get('/api/partner/{id?}', 'Partners@index')->name('partner.index');
+    Route::post('/api/partner', 'Partners@store')->name('partner.store');
+    Route::post('/api/partner/{id}', 'Partners@update')->name('partner.update');
+    Route::delete('/api/partner/{id}', 'Partners@destroy')->name('partner.destroy');
 });
