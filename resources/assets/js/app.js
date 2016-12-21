@@ -373,12 +373,12 @@ const app = new Vue({
     sendLead: function() {
       this.$http.post('/api/lead', {
           location: this.lead.location,
-          lead_type: this.lead.lead_type,
+          lead_type: this.lead.lead_type ? "1" : "0",
           preferences: this.lead.preferences,
           price_range: this.lead.price_range,
           home_type: this.lead.home_type,
           time_frame: this.lead.time_frame,
-          agent_hero: this.lead.agent_hero,
+          agent_hero: this.lead.agent_hero ? "1" : "0",
           fullname: this.lead.fullname,
           email: this.lead.email,
           phone: this.lead.phone
