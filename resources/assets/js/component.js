@@ -20,3 +20,4 @@ Vue.component('maf-form-status', require('./components/form/status.vue'));
 Vue.component('maf-form-searching', require('./components/form/searching.vue'));
 
 require('./components/object/lead');
+require('./components/object/testimonial');

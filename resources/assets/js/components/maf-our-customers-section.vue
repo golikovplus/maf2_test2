@@ -15,6 +15,18 @@
           <img src="/images/demo/customer-3@3x.png" alt="Top Agent" />
           <img src="/images/demo/customer-4@3x.png" alt="Top Agent" />
           <img src="/images/demo/customer-5@3x.png" alt="Top Agent" />
+            <!-- Uncomment next lines to get data from DB-->
+            <!--<ul id="ul_top_hypers">-->
+                <!--<li v-for="(testimonial,index) in vueRoot.testimonials" v-bind:index="index">-->
+                    <!--<img v-bind:src="testimonial.image"  alt="Top Agent"/>-->
+                    <!--<span v-if="index == 3">-->
+                        <!--{{index}}<span-->
+                            <!--v-bind:address="testimonial.image"-->
+                            <!--v-bind:name="testimonial.name"></span>-->
+                    <!--</span>-->
+
+                <!--</li>-->
+            <!--</ul>-->
         </div>
         <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12 col-xs-offset-0 col-sm-offset-0">
           <div class="customer-valoration">
@@ -30,3 +42,12 @@
     </div>
   </section>
 </template>
+<script>
+    export default{
+        data() {
+            return {
+                vueRoot: this.$parent.$parent
+            }
+        }
+    }
+</script>
