@@ -1,5 +1,5 @@
 <template xmlns:v-bind="http://www.w3.org/1999/xhtml">
-  <footer class="footer" v-bind:class="{ 'hidden-xs': (vueRoot.googleMapRequested) }">
+  <footer class="footer" v-bind:class="{ 'hidden-xs hidden-sm': (vueRoot.googleMapRequested) }">
     <div class="container">
       <div class="row">
         <div class="col-alignment col-md-15 col-sm-4 col-xs-12">

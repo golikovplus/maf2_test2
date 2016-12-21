@@ -11,43 +11,45 @@
         </div>
         <div class="container agents-container">
             <ul>
-                <li class="col-md-1 hidden-xs hidden-sm"></li>
-                <li class="col-xs-2 centered">
+                <li class="col-md-1 hidden-lg hidden-xs hidden-sm"></li>
+                <li class="col-xs-2 col-sm-4 col-md-2 centered">
                     <article class="center">
                         <img class="center-block" src="/images/demo/img_1@3x.png" srcset="/images/demo/img_1@3x.png 2x, /images/demo/img_1@3x.png 3x" alt="Top Agent" />
                         <h3>ellen l <br /> <span>realtor</span></h3>
                         <p>Top 5% producer lorem ipsum</p>
                     </article>
                 </li>
-                <li class="col-xs-2 centered">
+                <li class="col-xs-2 col-sm-4 col-md-2 centered">
                     <article class="center">
                         <img class="center-block" src="/images/demo/img_2@3x.png" srcset="/images/demo/img_2@3x.png 2x, /images/demo/img_2@3x.png 3x" alt="Top Agent" />
                         <h3>tristan s <br /> <span>realtor</span></h3>
                         <p>Top 5% producer lorem ipsum</p>
                     </article>
                 </li>
-                <li class="col-xs-2 centered">
+                <li class="col-xs-2 col-sm-4 col-md-2 centered">
                     <article class="center">
                         <img class="center-block" src="/images/demo/img_3@3x.png" srcset="/images/demo/img_3@3x.png 2x, /images/demo/img_3@3x.png 3x" alt="Top Agent" />
                         <h3>marissa s <br /> <span>realtor</span></h3>
                         <p>Top 5% producer lorem ipsum</p>
                     </article>
                 </li>
-                <li class="col-xs-2 centered">
+                <li class="hidden-lg hidden-xs hidden-md col-sm-2">
+                </li>
+                <li class="col-xs-2 col-sm-4 col-md-2 centered">
                     <article class="center">
                         <img class="center-block" src="/images/demo/img_4@3x.png" srcset="/images/demo/img_4@3x.png 2x, /images/demo/img_4@3x.png 3x" alt="Top Agent" />
                         <h3>dirk c <br /> <span>realtor</span></h3>
                         <p>Top 5% producer lorem ipsum</p>
                     </article>
                 </li>
-                <li class="col-xs-2 centered">
+                <li class="col-xs-2 col-sm-4 col-md-2 centered">
                     <article class="center">
                         <img class="center-block" src="/images/demo/img_5@3x.png" srcset="/images/demo/img_5@3x.png 2x, /images/demo/img_5@3x.png 3x" alt="Top Agent" />
                         <h3>lili p <br /> <span>realtor</span></h3>
                         <p>Top 5% producer lorem ipsum</p>
                     </article>
                 </li>
-                <li class="col-md-1 hidden-xs hidden-sm"></li>
+                <li class="col-md-1 hidden-lg hidden-xs hidden-sm"></li>
             </ul>
         </div>
     </section>

@@ -321,6 +321,9 @@ section.top-agents .agents-container ul {
   section.top-agents .agents-container {
     margin-left: auto;
   }
+  section.top-agents .agents-container ul {
+    min-width: initial;
+  }
 }
 
 /* Landing - Features */
@@ -455,7 +458,7 @@ section.extra-padding {
     height: 560px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .section-map-wrapper {
     height: 310px;
   }
