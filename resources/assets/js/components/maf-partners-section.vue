@@ -9,22 +9,22 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 col-xs-6 col-sm-6 partner-logo">
+        <div class="col-md-2 col-xs-6 col-sm-4 partner-logo">
           <i class="coldwell-partner center-block"></i>
         </div>
-        <div class="col-md-2 col-xs-6 col-sm-6 partner-logo">
+        <div class="col-md-2 col-xs-6 col-sm-4 partner-logo">
           <i class="century-partner center-block"></i>
         </div>
-        <div class="col-md-2 col-xs-6 col-sm-6 partner-logo">
+        <div class="col-md-2 col-xs-6 col-sm-4 partner-logo">
           <i class="sothebys-partner center-block"></i>
         </div>
-        <div class="col-md-2 col-xs-6 col-sm-6 partner-logo">
+        <div class="col-md-2 col-xs-6 col-sm-4 partner-logo">
           <i class="kw-partner center-block"></i>
         </div>
-        <div class="col-md-2 col-xs-6 col-sm-6 partner-logo">
+        <div class="col-md-2 col-xs-6 col-sm-4 partner-logo">
           <i class="berkshire-partner center-block"></i>
         </div>
-        <div class="col-md-2 col-xs-6 col-sm-6 partner-logo">
+        <div class="col-md-2 col-xs-6 col-sm-4 partner-logo">
           <i class="remax-partner center-block"></i>
         </div>
       </div>

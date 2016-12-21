@@ -10,11 +10,11 @@
       </div>
       <div class="row centered">
         <div class="customers-gallery center">
-          <img src="/images/demo/customer-1@3x.png" alt="Top Agent" class="hidden-xs"/>
-          <img src="/images/demo/customer-2@3x.png" alt="Top Agent" />
-          <img src="/images/demo/customer-3@3x.png" alt="Top Agent" />
-          <img src="/images/demo/customer-4@3x.png" alt="Top Agent" />
-          <img src="/images/demo/customer-5@3x.png" alt="Top Agent" />
+          <img src="/images/demo/customer-1@3x.png" srcset="/images/demo/customer-1@3x.png 2x, /images/demo/customer-1@3x.png 3x" alt="Top Agent" class="hidden-xs"/>
+          <img src="/images/demo/customer-2@3x.png" srcset="/images/demo/customer-2@3x.png 2x, /images/demo/customer-2@3x.png 3x" alt="Top Agent" />
+          <img src="/images/demo/customer-3@3x.png" srcset="/images/demo/customer-3@3x.png 2x, /images/demo/customer-3@3x.png 3x" alt="Top Agent" />
+          <img src="/images/demo/customer-4@3x.png" srcset="/images/demo/customer-4@3x.png 2x, /images/demo/customer-4@3x.png 3x" alt="Top Agent" />
+          <img src="/images/demo/customer-5@3x.png" srcset="/images/demo/customer-5@3x.png 2x, /images/demo/customer-5@3x.png 3x" alt="Top Agent" class="hidden-xs"/>
             <!-- Uncomment next lines to get data from DB-->
             <!--<ul id="ul_top_hypers">-->
                 <!--<li v-for="(testimonial,index) in vueRoot.testimonials" v-bind:index="index">-->
