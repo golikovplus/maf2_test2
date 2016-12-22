@@ -42,9 +42,12 @@
     <br><br><br>
     <h2>Add Testimonial</h2>
     {!! Form::open(array('url' => 'api/testimonial', 'method' => 'post','files' => true)) !!}
+        {!! Form::label('Name') !!}
         {!! Form::text('fullname', 'George') !!}
         {!! Form::file('image') !!}
+        {!! Form::label('Location') !!}
         {!! Form::text('address', 'New York') !!}
+        {!! Form::label('Statement') !!}
         {!! Form::text('message', 'I recommend MyAgentFinder!') !!}
         {!! Form::submit('Click Me!') !!}
     {!! Form::close() !!}

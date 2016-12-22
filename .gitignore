@@ -27,7 +27,7 @@ composer.phar
 /_ide_helper.php
 
 .env
-
+.pull_from_remote.sh
 
 
 
