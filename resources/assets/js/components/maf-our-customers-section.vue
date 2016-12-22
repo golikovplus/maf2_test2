@@ -10,35 +10,21 @@
       </div>
       <div class="row centered">
         <div class="customers-gallery center">
-          <img src="/images/demo/customer-1@3x.png" srcset="/images/demo/customer-1@3x.png 2x, /images/demo/customer-1@3x.png 3x" alt="Top Agent" class="hidden-xs"/>
-          <img src="/images/demo/customer-2@3x.png" srcset="/images/demo/customer-2@3x.png 2x, /images/demo/customer-2@3x.png 3x" alt="Top Agent" />
-          <img src="/images/demo/customer-3@3x.png" srcset="/images/demo/customer-3@3x.png 2x, /images/demo/customer-3@3x.png 3x" alt="Top Agent" />
-          <img src="/images/demo/customer-4@3x.png" srcset="/images/demo/customer-4@3x.png 2x, /images/demo/customer-4@3x.png 3x" alt="Top Agent" />
-          <img src="/images/demo/customer-5@3x.png" srcset="/images/demo/customer-5@3x.png 2x, /images/demo/customer-5@3x.png 3x" alt="Top Agent" class="hidden-xs"/>
-            <!-- Uncomment next lines to get data from DB-->
-            <!--<ul id="ul_top_hypers">-->
-                <!--<li v-for="(testimonial,index) in vueRoot.testimonials" v-bind:index="index">-->
-                    <!--<img v-bind:src="testimonial.image"  alt="Top Agent"/>-->
-                    <!--<span v-if="index == 3">-->
-                        <!--{{index}}<span-->
-                            <!--v-bind:address="testimonial.image"-->
-                            <!--v-bind:name="testimonial.name"></span>-->
-                    <!--</span>-->
-
-                <!--</li>-->
-            <!--</ul>-->
+            <ul id="ul_top_hypers">
+                <li v-for="(testimonial,index) in vueRoot.testimonials" v-bind:index="index" v-if='index<=4'>
+                    <img v-bind:src="testimonial.image" v-bind:class="{ opacity: index == item }" alt="Top Agent"/>
+                </li>
+            </ul>
         </div>
-        <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12 col-xs-offset-0 col-sm-offset-0">
-          <div class="customer-valoration">
-            <p>
-              “My experience with Sagine Miller was superior! She was able to find me exactly what I was looking for in a home. I couldn’t be happier. I found my dream home! I am forever grateful.”
-            </p>
-            <h3><span>allie dawson</span> <br> san diego, ca</h3>
+          <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12 col-xs-offset-0 col-sm-offset-0" v-if='vueRoot.testimonials[item]'>
+              <div class="customer-valoration" v-show='vueRoot.testimonials[item]'>
+                  <p>{{vueRoot.testimonials[item].message}}</p>
+                  <h3><span>{{vueRoot.testimonials[item].name}}</span> <br>{{vueRoot.testimonials[item].address}}</h3>
+              </div>
           </div>
-        </div>
       </div>
-      <i class="slider-ctrl-left big-arrow-left hidden-xs"></i>
-      <i class="slider-ctrl-right big-arrow-right hidden-xs"></i>
+      <i v-on:click="previousItem" class="slider-ctrl-left big-arrow-left hidden-xs"></i>
+      <i v-on:click="nextItem" class="slider-ctrl-right big-arrow-right hidden-xs"></i>
     </div>
   </section>
 </template>
@@ -46,7 +32,16 @@
     export default{
         data() {
             return {
-                vueRoot: this.$parent.$parent
+                vueRoot: this.$parent.$parent,
+                item: 2
+            }
+        },
+        methods: {
+            nextItem: function () {
+                this.item == 0 ? this.item=4 : this.item-=1;
+            },
+            previousItem: function () {
+                this.item == 4 ? this.item=0 : this.item+=1;
             }
         }
     }

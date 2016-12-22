@@ -820,12 +820,12 @@ section.our-customers .line {
   margin: 0px 2rem 40px 2rem;
   display: inline-block;
 }
-.our-customers .customers-gallery {
-  margin-bottom: 30px;
-  width: 486px;
-  margin-left: -10%;
-  overflow: hidden;  /* This container keeps the same size in all break lines so it has this to avoid horizontal scroll */
-}
+/*.our-customers .customers-gallery {*/
+  /*margin-bottom: 30px;*/
+  /*width: 486px;*/
+  /*margin-left: -10%;*/
+  /*overflow: hidden;  *//* This container keeps the same size in all break lines so it has this to avoid horizontal scroll */
+/*}*/
 @media (max-width: 767px) {
   .our-customers .customers-gallery {
     width: auto;
@@ -1328,4 +1328,12 @@ i.remax-partner { background-image: url("../images/landing/remax.png"); width: 1
 
 #ul_top_hypers li {
     float: right;
+}
+
+.our-customers .customers-gallery img{
+    opacity: 0.5;
+}
+
+.opacity {
+    opacity: 1!important;
 }

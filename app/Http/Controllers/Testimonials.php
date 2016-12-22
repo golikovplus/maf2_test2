@@ -17,7 +17,7 @@ class Testimonials extends Controller {
      */
     public function index($id = null) {
         if ($id == null) {
-            return Testimonial::orderBy('id', 'asc')->get();
+            return Testimonial::orderBy('id', 'desc')->get();
         } else {
             return $this->show($id);
         }
