@@ -25,6 +25,7 @@
             </ul>
         </div>
     @endif
+    <h2>Add Lead</h2>
     {!! Form::open(array('url' => 'api/lead', 'method' => 'post')) !!}
         {!! Form::text('location', 'NewYork') !!}
         {!! Form::text('lead_type', '') !!}
@@ -39,6 +40,7 @@
         {!! Form::submit('Click Me!') !!}
     {!! Form::close() !!}
     <br><br><br>
+    <h2>Add Testimonial</h2>
     {!! Form::open(array('url' => 'api/testimonial', 'method' => 'post','files' => true)) !!}
         {!! Form::text('fullname', 'George') !!}
         {!! Form::file('image') !!}
